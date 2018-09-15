@@ -1,0 +1,9 @@
+.sidebar {
+    padding-top: font-size(medium) + ($spacing-unit * 0.75);
+    background: linear-gradient(
+        to bottom,
+        color-get(blue, light) 0%,
+        transparent 300px,
+        transparent 100%
+    );
+}

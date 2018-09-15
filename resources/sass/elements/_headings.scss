@@ -1,0 +1,32 @@
+@mixin heading($heading) {
+    $heading: map-get($headings, $heading);
+
+    @each $viewport, $size in $heading {
+        @if ($viewport == 'default') {
+            font-size: $size;
+        } @else {
+            @include mq($viewport) {
+                font-size: $size;
+            }
+        }
+    }
+}
+
+// Font sizes
+@each $label, $heading in $headings {
+    .heading--#{ $label } {
+        @include heading($label);
+    }
+}
+
+h1 { @include heading(alpha) }
+h2 { @include heading(bravo) }
+h3 { @include heading(charlie) }
+h4 { @include heading(delta) }
+h5 { @include heading(echo) }
+
+h1,
+h2,
+h3,
+h4,
+h5 { font-weight: 200; }

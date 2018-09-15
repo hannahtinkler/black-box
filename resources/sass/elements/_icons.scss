@@ -1,0 +1,5 @@
+@mixin icon-size($size) {
+    transform-origin: center;
+    transform: scale(map-get($icon-sizes, $size));
+}
+

@@ -1,0 +1,17 @@
+@mixin list-reset() {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin button-reset() {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    text-align: left;
+
+    &:hover,
+    &:focus {
+        outline: 0;
+    }
+}

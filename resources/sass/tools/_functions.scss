@@ -1,0 +1,15 @@
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+
+    @return $map;
+}
+
+@function color-get($color, $shade: default) {
+    @return map-deep-get($colors, $color, $shade);
+}
+
+@function font-size($key) {
+    @return map-get($font-sizes, $key);
+}

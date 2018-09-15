@@ -1,0 +1,75 @@
+$headings: (
+    alpha: (
+        default: 45px,
+    ),
+    bravo: (
+        default: 30px,
+    ),
+    charlie: (
+        default: 24px,
+    ),
+    delta: (
+        default: 20px,
+    ),
+    echo: (
+        default: 16px,
+    ),
+);
+
+$mq-breakpoints: (
+    small: 320px,
+    medium: 740px,
+    large: 980px,
+    xlarge: 1300px
+);
+
+$colors: (
+    off-white: (
+        default: #f3f3f4,
+        dark: #e7eaec,
+        darker: #dedede,
+    ),
+    black: (
+        default: #505050,
+        dark: #303030,
+    ),
+    grey: (
+        default: #a0a0a0,
+    ),
+    blue: (
+        lighter: #f4f6fa,
+        light: #73a0b5,
+        default: #387691,
+    ),
+);
+
+$font-sizes: (
+    tiny: 12px,
+    small: 14px,
+    medium: 16px,
+    large: 18px,
+    xlarge: 30px,
+);
+
+$icon-sizes: (
+    medium: 1,
+    large: 1.2,
+    xlarge: 1.3,
+);
+
+$fa-font-path: '/fonts/vendor/font-awesome';
+$primary-menu-width: 300px;
+
+$spacing-unit: 40px;
+$quarter-spacing-unit: $spacing-unit / 4;
+$half-spacing-unit: $spacing-unit / 2;
+$double-spacing-unit: $spacing-unit * 2;
+$triple-spacing-unit: $spacing-unit * 3;
+$quad-spacing-unit: $spacing-unit * 4;
+
+$z-index-level-1: 0;
+$z-index-level-2: 10;
+$z-index-level-3: 20;
+$z-index-level-4: 30;
+$z-index-level-5: 40;
+$z-index-level-6: 60;

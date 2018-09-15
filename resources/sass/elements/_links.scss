@@ -1,0 +1,17 @@
+@mixin link-color($color, $shade: default) {
+    color: color-get($color, $shade);
+
+    &:focus,
+    &:hover {
+       color: color-get($color, $shade);
+    }
+}
+
+a {
+    @include link-color(blue);
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
