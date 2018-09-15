@@ -14045,6 +14045,11 @@ a:focus {
   width: 100%;
 }
 
+.secondary-menu .fa-cube {
+  position: relative;
+  top: -1px;
+}
+
 .category-menu__list {
   list-style-type: none;
   margin: 0;
