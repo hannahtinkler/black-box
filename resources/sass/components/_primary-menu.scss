@@ -11,7 +11,7 @@
 .primary-menu__sub-list-item {
     max-height: font-size(small) + $half-spacing-unit + 6px;
     overflow: hidden;
-    transition: max-height 0.15s linear;
+    transition: max-height 0.5s linear;
 
     &--current {
         background-color: rgba(255, 255, 255, 0.6);

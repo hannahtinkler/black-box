@@ -17,7 +17,7 @@
         </li>
 
         <li class="secondary-menu__list-item">
-            <a href="{{ route('home') }}" class="secondary-menu__link secondary-menu__link--icon" title="Add a new page">
+            <a href="{{ route('pages.create') }}" class="secondary-menu__link secondary-menu__link--icon" title="Add a new page">
                 <i class="secondary-menu__icon fa fa-plus"></i>
                 <span class="vh">Add a new page</span>
             </a>

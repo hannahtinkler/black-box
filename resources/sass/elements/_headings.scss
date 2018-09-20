@@ -30,3 +30,9 @@ h2,
 h3,
 h4,
 h5 { font-weight: 200; }
+
+.heading--underline {
+    border-bottom: thin solid color-get(off-white, dark);
+    padding-bottom: $half-spacing-unit;
+    margin-bottom: $half-spacing-unit * 1.5;
+}

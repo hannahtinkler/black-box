@@ -11,8 +11,12 @@ body {
 
 .main-content {
     border-left: color-get(off-white, darker) 1px solid;
-    min-height: 100vh;
-    background-color: color-get(blue, lighter);
+    background-color: color-get(grey, lighter);
     flex-grow: 1;
+    left: $primary-menu-width;
+    min-height: 100vh;
     padding: $triple-spacing-unit $spacing-unit * 1.75;
+    position: relative;
+    top: 0;
+    max-width: calc(100vw - #{ $primary-menu-width });
 }

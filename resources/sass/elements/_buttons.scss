@@ -1,0 +1,14 @@
+@mixin btn-color($background, $background-shade: default, $border, $border-shade: default) {
+    background-color: color-get($background, $background-shade);
+    border: thin solid color-get($border, $border-shade);
+
+    &:hover,
+    &:focus {
+        background-color: color-get($border, $border-shade);
+        border: thin solid color-get($background, $background-shade);
+    }
+}
+
+.btn--primary {
+    @include btn-color(blue, default, grey, dark);
+}

@@ -6,8 +6,8 @@ use App\Models\Category;
 
 class CategoryRepository
 {
-    public function all()
+    public function all(string $orderBy = 'order')
     {
-        return Category::orderBy('order')->get();
+        return Category::orderBy($orderBy)->get();
     }
 }

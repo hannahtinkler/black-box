@@ -24,6 +24,9 @@ $mq-breakpoints: (
 );
 
 $colors: (
+    white: (
+        default: #fff,
+    ),
     off-white: (
         default: #f3f3f4,
         dark: #e7eaec,
@@ -34,10 +37,11 @@ $colors: (
         dark: #303030,
     ),
     grey: (
+        lighter: #f4f6fa,
         default: #a0a0a0,
     ),
     blue: (
-        lighter: #f4f6fa,
+        lighter: #aad5e8,
         light: #73a0b5,
         default: #387691,
     ),

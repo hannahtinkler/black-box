@@ -12,8 +12,9 @@
 */
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::resource('/categories', 'CategoryController@index');
+Route::resource('/categories', 'CategoryController');
 Route::get('/categories/select/{category}', 'CategoryController@select')->name('categories.select');
 
 Route::resource('/pages', 'PageController');
+
 Route::resource('/chapters', 'ChapterController');

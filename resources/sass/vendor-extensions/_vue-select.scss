@@ -1,0 +1,39 @@
+.v-select {
+    margin-bottom: $half-spacing-unit;
+
+    .dropdown-toggle {
+        background-color: white !important;
+        border: thin solid color-get(off-white, dark) !important;
+        border-radius: 0 !important;
+        font-size: font-size(medium) !important;
+        height: font-size(medium) + $half-spacing-unit !important;
+        padding: 0 !important;
+        margin-top: $quarter-spacing-unit / 2;
+        transition: background 0.15s linear;
+
+        &:after { content: none !important; }
+    }
+
+    &.disabled {
+        .dropdown-toggle {
+            overflow: hidden;
+            background: #f9f9f9 !important;
+        }
+    }
+
+    input,
+    .selected-tag { margin-top: 0 !important; }
+
+    &.open {
+        .selected-tag { margin-top: $quarter-spacing-unit / 2 !important; }
+    }
+
+    .open-indicator {
+        &:before {
+            width: 9px !important;
+            height: 9px !important;
+            position: relative;
+            top: -2px;
+        }
+    }
+}

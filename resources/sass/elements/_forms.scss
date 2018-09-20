@@ -1,3 +1,28 @@
 ::placeholder {
     color: color-get(grey);
 }
+
+label {
+    display: block;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    background-color: white;
+    margin-top: $quarter-spacing-unit / 2;
+    margin-bottom: $quarter-spacing-unit;
+    border: thin solid color-get(off-white, dark);
+    padding: $quarter-spacing-unit / 2 $quarter-spacing-unit;
+
+    &:focus {
+        outline-color: color-get(blue, lighter);
+    }
+}
+
+select {
+    appearance: none;
+    border-radius: 0;
+}

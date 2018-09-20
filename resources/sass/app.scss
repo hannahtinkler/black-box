@@ -9,6 +9,7 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~prism-themes/themes/prism-xonokai';
 @import '~font-awesome/scss/font-awesome';
+@import '~simplemde/dist/simplemde.min';
 
 // Elements
 @import 'elements/base';
@@ -23,3 +24,8 @@
 @import 'components/primary-menu';
 @import 'components/secondary-menu';
 @import 'components/category-menu';
+@import 'components/markdown-editor';
+
+// Vendor Extensions
+@import 'vendor-extensions/vue-select';
+@import 'vendor-extensions/simplemde';

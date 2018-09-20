@@ -7,16 +7,23 @@
 
 require('./bootstrap');
 
+// Packages
 import Vue from 'vue';
 import Prism from 'prismjs';
-import ExampleComponent from './components/ExampleComponent';
+
+// Components
+import CategoryChapterSelect from './components/CategoryChapterSelect';
+
+// Libraries
 import ClassToggler from './lib/ClassToggler';
+import MarkdownEditor from './lib/MarkdownEditor';
 
 new Vue({
     el: '#app',
     components: {
-        ExampleComponent,
+        CategoryChapterSelect,
     }
 });
 
 new ClassToggler;
+new MarkdownEditor;

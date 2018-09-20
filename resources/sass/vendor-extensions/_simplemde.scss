@@ -1,0 +1,24 @@
+.CodeMirror,
+.editor-toolbar {
+    border-radius: 0;
+    background-color: white;
+    border-color: color-get(off-white, dark);
+}
+
+.editor-toolbar {
+    margin-top: $quarter-spacing-unit / 2;
+
+    &.fullscreen {
+        z-index: $z-index-level-5;
+        margin-top: 0;
+    }
+}
+
+.editor-statusbar {
+    display: inline-block;
+    float: right;
+
+    span {
+        min-width: auto;
+    }
+}
