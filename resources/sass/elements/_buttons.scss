@@ -1,14 +1,39 @@
-@mixin btn-color($background, $background-shade: default, $border, $border-shade: default) {
-    background-color: color-get($background, $background-shade);
-    border: thin solid color-get($border, $border-shade);
+@mixin btn {
+    padding: $quarter-spacing-unit / 2 $half-spacing-unit;
+    margin: 1px;
+    border: 1px solid color-get(grey, light);
+    color: color-get(black);
+    background: white;
+    transition: all linear 0.15s;
 
     &:hover,
     &:focus {
-        background-color: color-get($border, $border-shade);
-        border: thin solid color-get($background, $background-shade);
+        color: color-get(black);
+        // transform: translate3d(0, -3px, 0);
+        transform: scale(1.05);
+        transform-origin: center;
+        padding: ($quarter-spacing-unit / 2 + 1px) $half-spacing-unit + 1px;
+        margin:0;
+    }
+
+    &:not(:last-child) { margin-right: $quarter-spacing-unit / 2; }
+}
+
+@mixin btn-color($color, $shade: default) {
+    background-color: color-get($color, $shade);
+    color: white;
+
+    &:hover,
+    &:focus {
+        color: color-get(white);
+        background-color: lighten(color-get($color, $shade), 5%);
     }
 }
 
+.btn {
+    @include btn;
+}
+
 .btn--primary {
-    @include btn-color(blue, default, grey, dark);
+    @include btn-color(blue);
 }

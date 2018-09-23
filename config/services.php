@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'bitbucket' => [
+        'client_id' => env('BITBUCKET_OAUTH_KEY'),
+        'client_secret' => env('BITBUCKET_OAUTH_SECRET'),
+        'redirect' => env('APP_URL') . '/oauth/bitbucket',
+    ],
+
 ];

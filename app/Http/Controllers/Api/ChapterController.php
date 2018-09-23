@@ -21,6 +21,10 @@ class ChapterController extends Controller
         $this->repository = $repository;
     }
 
+    /**
+     * @param  Request $request
+     * @return Response
+     */
     public function index(Request $request)
     {
         $chapters = $this->repository->search($request->input());

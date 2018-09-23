@@ -24,7 +24,7 @@
   --white: (default: #fff);
   --off-white: (default: #f3f3f4, dark: #e7eaec, darker: #dedede);
   --black: (default: #505050, dark: #303030);
-  --grey: (lighter: #f4f6fa, default: #a0a0a0);
+  --grey: (lighter: #f4f6fa, light: #dad9d9, default: #a0a0a0);
   --blue: (lighter: #aad5e8, light: #73a0b5, default: #387691);
   --primary: #007bff;
   --secondary: #6c757d;
@@ -10478,198 +10478,6 @@ a.text-dark:focus {
   }
 }
 
-/**
-* xonokai theme for JavaScript, CSS and HTML
-* based on: https://github.com/MoOx/sass-prism-theme-base by Maxime Thirouin ~ MoOx --> http://moox.fr/ , which is Loosely based on Monokai textmate theme by http://www.monokai.nl/
-* license: MIT; http://moox.mit-license.org/
-*/
-
-code[class*="language-"],
-pre[class*="language-"] {
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
-  -webkit-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: normal;
-  font-family: Menlo, Monaco, "Courier New", monospace;
-  font-size: 14px;
-  color: #76d9e6;
-  text-shadow: none;
-}
-
-pre[class*="language-"],
-:not(pre) > code[class*="language-"] {
-  background: #2a2a2a;
-}
-
-pre[class*="language-"] {
-  padding: 15px;
-  border-radius: 4px;
-  border: 1px solid #e1e1e8;
-  overflow: auto;
-}
-
-pre[class*="language-"] {
-  position: relative;
-}
-
-pre[class*="language-"] code {
-  white-space: pre;
-  display: block;
-}
-
-:not(pre) > code[class*="language-"] {
-  padding: 0.15em 0.2em 0.05em;
-  border-radius: .3em;
-  border: 0.13em solid #7a6652;
-  -webkit-box-shadow: 1px 1px 0.3em -0.1em #000 inset;
-          box-shadow: 1px 1px 0.3em -0.1em #000 inset;
-}
-
-.token.namespace {
-  opacity: .7;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #6f705e;
-}
-
-.token.operator,
-.token.boolean,
-.token.number {
-  color: #a77afe;
-}
-
-.token.attr-name,
-.token.string {
-  color: #e6d06c;
-}
-
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-  color: #e6d06c;
-}
-
-.token.selector,
-.token.inserted {
-  color: #a6e22d;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword,
-.token.important,
-.token.deleted {
-  color: #ef3b7d;
-}
-
-.token.regex,
-.token.statement {
-  color: #76d9e6;
-}
-
-.token.placeholder,
-.token.variable {
-  color: #fff;
-}
-
-.token.important,
-.token.statement,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.punctuation {
-  color: #bebec5;
-}
-
-.token.entity {
-  cursor: help;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-code.language-markup {
-  color: #f9f9f9;
-}
-
-code.language-markup .token.tag {
-  color: #ef3b7d;
-}
-
-code.language-markup .token.attr-name {
-  color: #a6e22d;
-}
-
-code.language-markup .token.attr-value {
-  color: #e6d06c;
-}
-
-code.language-markup .token.style,
-code.language-markup .token.script {
-  color: #76d9e6;
-}
-
-code.language-markup .token.script .token.keyword {
-  color: #76d9e6;
-}
-
-/* Line highlight plugin */
-
-pre[class*="language-"][data-line] {
-  position: relative;
-  padding: 1em 0 1em 3em;
-}
-
-pre[data-line] .line-highlight {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: 0;
-  margin-top: 1em;
-  background: rgba(255, 255, 255, 0.08);
-  pointer-events: none;
-  line-height: inherit;
-  white-space: pre;
-}
-
-pre[data-line] .line-highlight:before,
-pre[data-line] .line-highlight[data-end]:after {
-  content: attr(data-start);
-  position: absolute;
-  top: .4em;
-  left: .6em;
-  min-width: 1em;
-  padding: 0.2em 0.5em;
-  background-color: rgba(255, 255, 255, 0.4);
-  color: black;
-  font: bold 65%/1 sans-serif;
-  height: 1em;
-  line-height: 1em;
-  text-align: center;
-  border-radius: 999px;
-  text-shadow: none;
-  -webkit-box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
-          box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
-}
-
-pre[data-line] .line-highlight[data-end]:after {
-  content: attr(data-end);
-  top: auto;
-  bottom: .4em;
-}
-
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -14649,6 +14457,55 @@ select {
   border-radius: 0;
 }
 
+.btn {
+  padding: 5px 20px;
+  margin: 1px;
+  border: 1px solid #dad9d9;
+  color: #505050;
+  background: white;
+  -webkit-transition: all linear 0.15s;
+  transition: all linear 0.15s;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #505050;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  padding: 6px 21px;
+  margin: 0;
+}
+
+.btn:not(:last-child) {
+  margin-right: 5px;
+}
+
+.btn--primary {
+  background-color: #387691;
+  color: white;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  color: #fff;
+  background-color: #3f85a3;
+}
+
+p {
+  font-weight: 200;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+.group--inline > * {
+  display: inline-block;
+  margin-right: 0 !important;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -14701,6 +14558,8 @@ select {
   padding: 10px 40px;
   width: 100%;
   cursor: pointer;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 .primary-menu__link:focus,
@@ -14725,13 +14584,18 @@ select {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.primary-menu__icon {
+  margin-right: 7px;
+}
+
+.is-active > .primary-menu__link .fa-folder-o,
+.primary-menu__link:hover .fa-folder-o {
+  margin-right: 5px;
+}
+
 .is-active > .primary-menu__link .fa-folder-o:before,
 .primary-menu__link:hover .fa-folder-o:before {
   content: "\F115";
-}
-
-.primary-menu__icon {
-  margin-right: 5px;
 }
 
 .primary-menu__show-more {
@@ -14813,8 +14677,8 @@ select {
 
 .secondary-menu__link--icon:focus,
 .secondary-menu__link--icon:hover {
-  -webkit-transform: translate3d(0, -3px, 0);
-          transform: translate3d(0, -3px, 0);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .secondary-menu__icon {
@@ -14967,6 +14831,24 @@ select {
   display: inline-block;
 }
 
+.access-denied {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .v-select {
   margin-bottom: 20px;
 }
@@ -14997,15 +14879,17 @@ select {
   margin-top: 0 !important;
 }
 
+.v-select .open-indicator:before {
+  position: relative;
+  top: -2px;
+}
+
 .v-select.open .selected-tag {
   margin-top: 5px !important;
 }
 
-.v-select .open-indicator:before {
-  width: 9px !important;
-  height: 9px !important;
-  position: relative;
-  top: -2px;
+.v-select.open .open-indicator:before {
+  top: 0;
 }
 
 .CodeMirror,
@@ -15031,5 +14915,141 @@ select {
 
 .editor-statusbar span {
   min-width: auto;
+}
+
+/**
+ * Monokai theme for Prism.JS
+ *
+ * @author Martijn Swaagman
+ * @license MIT 2015
+ */
+
+code,
+pre {
+  color: #f8f8f2;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code,
+pre {
+  background: #272822;
+}
+
+:not(pre) > code {
+  padding: .1em;
+  border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #778090;
+}
+
+.token.punctuation {
+  color: #F8F8F2;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #F92672;
+}
+
+.token.boolean,
+.token.number {
+  color: #AE81FF;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #A6E22E;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #F8F8F2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+  color: #E6DB74;
+}
+
+.token.keyword {
+  color: #F92672;
+}
+
+.token.regex,
+.token.important {
+  color: #FD971F;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+pre {
+  position: relative;
+}
+
+pre .toolbar {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+pre .toolbar-item {
+  cursor: pointer;
 }
 

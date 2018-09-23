@@ -21,6 +21,7 @@
     "vue": "^2.5.7"
   },
   "dependencies": {
+    "clipboard": "^2.0.1",
     "font-awesome": "^4.7.0",
     "simplemde": "^1.11.2"
   }

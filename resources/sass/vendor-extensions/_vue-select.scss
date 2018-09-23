@@ -24,16 +24,17 @@
     input,
     .selected-tag { margin-top: 0 !important; }
 
-    &.open {
-        .selected-tag { margin-top: $quarter-spacing-unit / 2 !important; }
-    }
-
     .open-indicator {
         &:before {
-            width: 9px !important;
-            height: 9px !important;
             position: relative;
             top: -2px;
+        }
+    }
+
+    &.open {
+        .selected-tag { margin-top: $quarter-spacing-unit / 2 !important; }
+        .open-indicator {
+            &:before { top: 0; }
         }
     }
 }

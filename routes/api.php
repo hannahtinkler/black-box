@@ -12,8 +12,3 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('web')->group(function () {
-    Route::get('/categories', 'Api\CategoryController@index');
-    Route::get('/chapters', 'Api\ChapterController@index');
-});

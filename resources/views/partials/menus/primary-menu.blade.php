@@ -29,7 +29,7 @@
 
                         @foreach($chapter->pages as $page)
                             <li class="primary-menu__list-item">
-                                <a class="primary-menu__sub-link" href="{{ route('pages.show', $page->id) }}">
+                                <a class="primary-menu__sub-link" href="{{ $page->permalink() }}">
                                     <i class="primary-menu__icon fa fa-file-o"></i>
                                     {{ $page->title }}
                                 </a>

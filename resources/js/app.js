@@ -5,11 +5,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require('./vendor/bootstrap');
+require('./vendor/prismjs');
 
 // Packages
 import Vue from 'vue';
-import Prism from 'prismjs';
 
 // Components
 import CategoryChapterSelect from './components/CategoryChapterSelect';
@@ -27,3 +27,5 @@ new Vue({
 
 new ClassToggler;
 new MarkdownEditor;
+
+axios.defaults.withCredentials = true;

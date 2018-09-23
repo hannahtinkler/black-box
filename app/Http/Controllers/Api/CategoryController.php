@@ -13,11 +13,18 @@ class CategoryController extends Controller
      */
     private $repository;
 
+    /**
+     * @param CategoryRepository $repository
+     */
     public function __construct(CategoryRepository $repository)
     {
         $this->repository = $repository;
     }
 
+    /**
+     * @param  Request $request
+     * @return Response
+     */
     public function index(Request $request)
     {
         $categories = $this->repository->all();
