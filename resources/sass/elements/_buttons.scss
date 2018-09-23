@@ -26,7 +26,6 @@
     &:hover,
     &:focus {
         color: color-get(white);
-        background-color: lighten(color-get($color, $shade), 5%);
     }
 }
 
@@ -36,4 +35,14 @@
 
 .btn--primary {
     @include btn-color(blue);
+}
+
+.btn--square {
+    padding: $quarter-spacing-unit $quarter-spacing-unit * 1.6;
+
+    &:hover,
+    &:focus {
+        padding: $quarter-spacing-unit + 1px $quarter-spacing-unit * 1.6 + 1px;
+        margin: 0;
+    }
 }

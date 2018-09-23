@@ -119,7 +119,7 @@ pre {
 
 pre {
     position: relative;
-
+    margin: $half-spacing-unit * 1.5 0;
     .toolbar {
         position: absolute;
         top: 0;
@@ -133,3 +133,5 @@ pre {
         cursor: pointer;
     }
 }
+
+code { font-size: font-size(tiny) !important; }

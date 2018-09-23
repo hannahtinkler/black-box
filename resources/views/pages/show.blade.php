@@ -18,11 +18,9 @@
     {!! $page->html !!}
 </div>
 
-<hr />
-
-<small>
-    Written by <strong><a href="/">{{ $page->creator->name }}</a></strong>
-</small>
+<p class="mt-5">
+    <small>Written by <strong><a href="/">{{ $page->creator->name }}</a></strong></small>
+</p>
 
 
 @stop
