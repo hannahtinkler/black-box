@@ -5,6 +5,8 @@
  * @license MIT 2015
  */
 code,
+.editor-preview pre,
+.editor-preview-side pre,
 pre {
     color: #f8f8f2;
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
@@ -27,6 +29,8 @@ pre {
     hyphens: none;
 }
 
+.editor-preview pre,
+.editor-preview-side pre,
 pre {
     padding: 1em;
     margin: .5em 0;
@@ -35,6 +39,8 @@ pre {
 }
 
 :not(pre) > code,
+.editor-preview pre,
+.editor-preview-side pre,
 pre {
     background: #272822;
 }
@@ -117,6 +123,8 @@ pre {
     cursor: help;
 }
 
+.editor-preview pre,
+.editor-preview-side pre,
 pre {
     position: relative;
     margin: $half-spacing-unit * 1.5 0;
