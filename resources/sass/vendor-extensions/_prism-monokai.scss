@@ -4,12 +4,11 @@
  * @author Martijn Swaagman
  * @license MIT 2015
  */
-code,
+code[class*="language-"],
 .editor-preview pre,
 .editor-preview-side pre,
 pre {
     color: #f8f8f2;
-    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     direction: ltr;
     text-align: left;
@@ -38,14 +37,14 @@ pre {
     border-radius: 0.3em;
 }
 
-:not(pre) > code,
+:not(pre) > code[class*="language-"],
 .editor-preview pre,
 .editor-preview-side pre,
 pre {
     background: #272822;
 }
 
-:not(pre) > code {
+:not(pre) > code[class*="language-"] {
     padding: .1em;
     border-radius: .3em;
 }
@@ -142,4 +141,4 @@ pre {
     }
 }
 
-code { font-size: font-size(tiny) !important; }
+code[class*="language-"] { font-size: font-size(tiny) !important; }
