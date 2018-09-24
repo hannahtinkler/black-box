@@ -29,7 +29,7 @@ class UserPolicy
      * @param  User   $user
      * @return Boolean
      */
-    public function access(User $user) : boolean
+    public function access(User $user) : bool
     {
         $teams = $this->bitbucket->teams();
 
