@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use Tests\Unit\TestCase;
+use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use \App\Models\User;
@@ -13,32 +13,36 @@ class UserPolicyTest extends TestCase
 {
     public function testItAllowsAccessIfUserInTeam()
     {
-        $bitbucketMock = $this->mock(BitbucketApiService::class);
+        $bitbucket = $this->mock(BitbucketApiService::class, function ($mock) {
+            $mock->teams()->willReturn([
+                (object) ['username' => 'e3creative'],
+                (object) ['username' => 'no-team'],
+            ])->shouldBeCalled();
+        });
 
-        $bitbucketMock->teams()->willReturn([
-            (object) ['username' => 'e3creative'],
-            (object) ['username' => 'no-team'],
-        ])->shouldBeCalled();
 
-        $policy = new UserPolicy($bitbucketMock->reveal());
+        $policy = new UserPolicy($bitbucket);
 
         $actual = $policy->access(new User);
 
         $this->assertTrue($actual);
+        $this->assertMethodsCalled();
     }
 
     public function testItDoesNotAllowAccessIfUserNotInTeam()
     {
-        $bitbucketMock = $this->mock(BitbucketApiService::class);
+        $bitbucket = $this->mock(BitbucketApiService::class, function ($mock) {
+            $mock->teams()->willReturn([
+                (object) ['username' => 'no-team'],
+            ])->shouldBeCalled();
+        });
 
-        $bitbucketMock->teams()->willReturn([
-            (object) ['username' => 'no-team'],
-        ])->shouldBeCalled();
 
-        $policy = new UserPolicy($bitbucketMock->reveal());
+        $policy = new UserPolicy($bitbucket);
 
         $actual = $policy->access(new User);
 
         $this->assertFalse($actual);
+        $this->assertMethodsCalled();
     }
 }

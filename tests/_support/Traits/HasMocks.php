@@ -18,9 +18,15 @@ trait HasMocks
         $this->prophet = new Prophet;
     }
 
-    public function mock(string $class)
+    public function mock(string $class, callable $actions = null)
     {
-        return $this->prophet->prophesize($class);
+        $mock = $this->prophet->prophesize($class);
+
+        if ($actions) {
+            $actions($mock);
+        }
+
+        return $mock->reveal();
     }
 
     public function assertMethodsCalled()
