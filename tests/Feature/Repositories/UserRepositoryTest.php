@@ -48,10 +48,11 @@ class UserRepositoryTest extends TestCase
 
         $repository = new UserRepository(new User);
 
-        $expected = $repository->loginOrRegister($socialite);
+        $repository->loginOrRegister($socialite);
+
         $actual = auth()->user();
 
-        $this->assertEquals($expected->toArray(), $actual->toArray());
+        $this->assertEquals($user->toArray(), $actual->toArray());
 
         $this->assertDatabaseHas('users', [
             'name' => $user->name,
