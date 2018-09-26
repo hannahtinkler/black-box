@@ -11,5 +11,7 @@
 |
 */
 
-Route::get('/categories', 'Api\CategoryController@index');
-Route::get('/chapters', 'Api\ChapterController@index');
+$router->get('/categories', 'Api\CategoryController@index');
+$router->get('/chapters', 'Api\ChapterController@index');
+
+$router->resource('/drafts', 'Api\PageDraftController');

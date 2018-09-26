@@ -49,6 +49,7 @@ class PageRepository
             'title' => $data['title'],
             'description' => $data['description'],
             'content' => $data['content'],
+            'has_resources' => $data['has_resources'],
             'created_by' => $data['user_id'],
         ]);
 
@@ -80,6 +81,7 @@ class PageRepository
         $page->title = $data['title'];
         $page->description = $data['description'];
         $page->content = $data['content'];
+        $page->has_resources = $data['has_resources'];
         $page->save();
 
         return $page;

@@ -52,7 +52,7 @@ class UserRepositoryTest extends TestCase
 
         $actual = auth()->user();
 
-        $this->assertEquals($user->toArray(), $actual->toArray());
+        $this->assertEquals($user->email, $actual->email);
 
         $this->assertDatabaseHas('users', [
             'name' => $user->name,

@@ -12,6 +12,10 @@ class Page extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'has_resources' => 'boolean',
+    ];
+
     protected $with = [
         'chapter',
     ];
