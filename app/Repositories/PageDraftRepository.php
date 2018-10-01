@@ -29,8 +29,8 @@ class PageDraftRepository
     public function transform(PageDraft $draft) : PageDraft
     {
         $draft->updated_at_formatted = $draft->updated_at
-            ? $draft->updated_at->format('jS F Y H:i:sa')
-            : $draft->created_at->format('jS F Y H:i:sa');
+            ? $draft->updated_at->format('jS F Y H:ia')
+            : $draft->created_at->format('jS F Y H:ia');
 
         return $draft;
     }
@@ -42,11 +42,11 @@ class PageDraftRepository
     public function store(array $data) : PageDraft
     {
         $draft = $this->model->create([
-            'chapter_id' => $data['chapter_id'],
-            'title' => $data['title'],
-            'description' => $data['description'],
-            'content' => $data['content'],
-            'has_resources' => $data['has_resources'],
+            'chapter_id' => $data['chapter_id'] ?? null,
+            'title' => $data['title'] ?? null,
+            'description' => $data['description'] ?? null,
+            'content' => $data['content'] ?? null,
+            'has_resources' => $data['has_resources'] ?? false,
             'created_by' => $data['user_id'],
         ]);
 
@@ -61,11 +61,11 @@ class PageDraftRepository
      */
     public function update(PageDraft $draft, array $data) : PageDraft
     {
-        $draft->chapter_id = $data['chapter_id'];
-        $draft->title = $data['title'];
-        $draft->description = $data['description'];
-        $draft->content = $data['content'];
-        $draft->has_resources = $data['has_resources'];
+        $draft->chapter_id = $data['chapter_id'] ?? null;
+        $draft->title = $data['title'] ?? null;
+        $draft->description = $data['description'] ?? null;
+        $draft->content = $data['content'] ?? null;
+        $draft->has_resources = $data['has_resources'] ?? false;
         $draft->save();
 
         return $draft;

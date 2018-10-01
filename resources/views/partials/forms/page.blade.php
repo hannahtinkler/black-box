@@ -20,11 +20,11 @@
         Content
 
         <textarea name="content" class="markdown-editor">{{ old('content') ?: $page->content ?? '' }}</textarea>
-        <small class="markdown-editor__status">Not yet saved</small>
+        <draft-last-updated></draft-last-updated>
     </label>
 
     <div class="col-sm-12 text-right mt-3">
-        <button class="btn">Save as draft</button>
+        <save-draft-button form="js-page-form"></save-draft-button>
         <button class="btn">Preview</button>
         <button type="submit" class="btn btn--primary">Save</button>
     </div>

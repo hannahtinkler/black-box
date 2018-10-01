@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Models\PageDraft;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\ChapterRepository;
+use App\Repositories\CategoryRepository;
 use App\Repositories\PageDraftRepository;
 
 class PageDraftController extends Controller
@@ -12,14 +14,19 @@ class PageDraftController extends Controller
     /**
      * @var PageDraftRepository
      */
-    public $repository;
+    public $drafts;
 
     /**
-     * @param PageDraftRepository $repository
+     * @param PageDraftRepository $drafts
      */
-    public function __construct(PageDraftRepository $repository)
-    {
-        $this->repository = $repository;
+    public function __construct(
+        PageDraftRepository $drafts,
+        CategoryRepository $categories,
+        ChapterRepository $chapters
+    ) {
+        $this->drafts = $drafts;
+        $this->chapters = $chapters;
+        $this->categories = $categories;
     }
 
     /**
@@ -29,13 +36,16 @@ class PageDraftController extends Controller
     public function store(Request $request)
     {
         $user = $request->user();
-        $data = $request->input();
+        $input = array_merge($request->input(), ['user_id' => $user->id]);
 
-        $draft = $this->repository->store(
-            array_merge($data, ['user_id' => $user->id])
-        );
+        if (!empty($input['category']) && !empty($input['chapter'])) {
+            $category = $this->categories->resolve($input['category']);
+            $chapter = $this->chapters->resolve($category, $input['chapter']);
+            $input = array_merge($input, ['chapter_id' => $chapter->id]);
+        }
 
-        $draft = $this->repository->transform($draft);
+        $draft = $this->drafts->store($input);
+        $draft = $this->drafts->transform($draft);
 
         return response()->json($draft);
     }
@@ -48,11 +58,16 @@ class PageDraftController extends Controller
     {
         //is draft owner
         $user = $request->user();
-        $data = $request->input();
+        $input = $request->input();
 
-        $this->repository->update($draft, $data);
+        if (!empty($input['category']) && !empty($input['chapter'])) {
+            $category = $this->categories->resolve($input['category']);
+            $chapter = $this->chapters->resolve($category, $input['chapter']);
+            $input = array_merge($input, ['chapter_id' => $chapter->id]);
+        }
 
-        $draft = $this->repository->transform($draft);
+        $this->drafts->update($draft, $input);
+        $draft = $this->drafts->transform($draft);
 
         return response()->json($draft);
     }

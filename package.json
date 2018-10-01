@@ -23,6 +23,7 @@
   "dependencies": {
     "clipboard": "^2.0.1",
     "font-awesome": "^4.7.0",
-    "simplemde": "^1.11.2"
+    "simplemde": "^1.11.2",
+    "vuex": "^3.0.1"
   }
 }

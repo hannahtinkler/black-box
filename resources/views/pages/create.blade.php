@@ -6,7 +6,7 @@
 
 @include('partials.alerts.errors')
 
-<form action="{{ route('pages.store') }}" method="POST">
+<form action="{{ route('pages.store') }}" method="POST" class="js-page-form">
     @include('partials.forms.page')
 </form>
 

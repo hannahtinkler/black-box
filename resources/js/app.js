@@ -10,9 +10,13 @@ require('./vendor/prismjs');
 
 // Packages
 import Vue from 'vue';
+import Vuex from 'vuex';
+import store from './store';
 
 // Components
+import SaveDraftButton from './components/SaveDraftButton';
 import CategoryChapterSelect from './components/CategoryChapterSelect';
+import DraftLastUpdated from './components/DraftLastUpdated';
 
 // Libraries
 import ClassToggler from './lib/ClassToggler';
@@ -20,8 +24,11 @@ import MarkdownEditor from './lib/MarkdownEditor';
 
 new Vue({
     el: '#app',
+    store,
     components: {
+        SaveDraftButton,
         CategoryChapterSelect,
+        DraftLastUpdated,
     }
 });
 

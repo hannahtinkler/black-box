@@ -6,7 +6,7 @@
 
 @include('partials.alerts.errors')
 
-<form action="{{ route('pages.update', $page->id) }}" method="POST">
+<form action="{{ route('pages.update', $page->id) }}" method="POST" class="js-page-form">
     {!! method_field('PUT') !!}
     @include('partials.forms.page')
 </form>
